@@ -1,0 +1,17 @@
+D:\BattleRoyalServer\masterServer\PhotonBase\deploy\MasterServer\bin\masterServer.dll.config
+D:\BattleRoyalServer\masterServer\PhotonBase\deploy\MasterServer\bin\masterServer.dll
+D:\BattleRoyalServer\masterServer\PhotonBase\deploy\MasterServer\bin\masterServer.pdb
+D:\BattleRoyalServer\masterServer\masterServer\obj\Debug\masterServer.csprojAssemblyReference.cache
+D:\BattleRoyalServer\masterServer\masterServer\obj\Debug\masterServer.csproj.CoreCompileInputs.cache
+D:\BattleRoyalServer\masterServer\masterServer\obj\Debug\masterServer.csproj.CopyComplete
+D:\BattleRoyalServer\masterServer\masterServer\obj\Debug\masterServer.dll
+D:\BattleRoyalServer\masterServer\masterServer\obj\Debug\masterServer.pdb
+D:\BattleRoyalServer\masterServer\obj\Debug\masterServer.csprojAssemblyReference.cache
+D:\BattleRoyalServer\masterServer\obj\Debug\masterServer.csproj.CoreCompileInputs.cache
+D:\BattleRoyalServer\masterServer\obj\Debug\masterServer.dll
+D:\BattleRoyalServer\masterServer\obj\Debug\masterServer.pdb
+D:\BattleRoyalServer\PhotonBase\deploy\MasterServer\bin\masterServer.dll.config
+D:\BattleRoyalServer\PhotonBase\deploy\MasterServer\bin\masterServer.dll
+D:\BattleRoyalServer\PhotonBase\deploy\MasterServer\bin\masterServer.pdb
+D:\BattleRoyalServer\masterServer\obj\Debug\masterServer.csproj.CopyComplete
+D:\BattleRoyalServer\PhotonBase\deploy\MasterServer\bin\log4net.config

@@ -1,0 +1,10 @@
+2021-03-04 16:05:08,982 [1] INFO  Photon.StarDust.Client.Program - Starting 5 games with 3 players
+2021-03-04 16:05:09,607 [5] INFO  Photon.StarDust.Client.Program - [12736] Started game REILGAN-ой(12736)1 with 3 clients
+2021-03-04 16:05:09,932 [5] INFO  Photon.StarDust.Client.Program - [12736] Started game REILGAN-ой(12736)2 with 3 clients
+2021-03-04 16:05:09,996 [4] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-04 16:05:10,349 [5] INFO  Photon.StarDust.Client.Program - [12736] Started game REILGAN-ой(12736)3 with 3 clients
+2021-03-04 16:05:10,859 [5] INFO  Photon.StarDust.Client.Program - [12736] Started game REILGAN-ой(12736)4 with 3 clients
+2021-03-04 16:05:11,006 [30] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-04 16:05:11,377 [5] INFO  Photon.StarDust.Client.Program - [12736] Started game REILGAN-ой(12736)5 with 3 clients
+2021-03-04 16:05:12,020 [5] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0
+2021-03-04 16:05:13,033 [4] DEBUG Photon.StarDust.Client.Program - peers: 0, r-ev: 0, ur-ev: 0, r-op: 0, ur-op: 0, res: 0, r-rtt: 0, ur-rtt: 0, rtt: 0, var: 0, flsh-rtt: 0, flsh-ev 0, flsh-op 0

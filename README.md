@@ -1,1 +1,1 @@
-# BattleRoyalServer
+# GameServer

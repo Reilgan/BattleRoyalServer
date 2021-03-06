@@ -1,0 +1,12 @@
+5508: 16:49:29.298 - ---
+5508: 16:49:29.298 - Service: "Photon Socket Server" starting
+5508: 16:49:29.298 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+5508: 16:49:29.299 - Will produce at most: 10 crash dumps
+5508: 16:49:29.299 - Service shutting down
+5508: 16:49:29.311 - Service shut down complete
+11412: 19:03:48.686 - ---
+11412: 19:03:48.686 - Service: "Photon Socket Server" starting
+11412: 19:03:48.686 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+11412: 19:03:48.687 - Will produce at most: 10 crash dumps
+11412: 19:03:48.688 - Service shutting down
+11412: 19:03:48.688 - Service shut down complete

@@ -1,0 +1,6 @@
+D:\battleRoyal\battleRoyalUnity\Assets\Plugins\battleRoyalServer.Common.dll
+D:\battleRoyal\battleRoyalUnity\Assets\Plugins\battleRoyalServer.Common.pdb
+D:\battleRoyal\battleRoyalServer.Common\obj\Debug\battleRoyalServer.Common.csproj.CoreCompileInputs.cache
+D:\battleRoyal\battleRoyalServer.Common\obj\Debug\battleRoyalServer.Common.dll
+D:\battleRoyal\battleRoyalServer.Common\obj\Debug\battleRoyalServer.Common.pdb
+D:\battleRoyal\battleRoyalServer.Common\obj\Debug\battleRoyalServer.Common.csprojAssemblyReference.cache

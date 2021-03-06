@@ -1,0 +1,16 @@
+D:\vsProject\battleRoyalServer\obj\Debug\battleRoyalServer.csprojAssemblyReference.cache
+D:\vsProject\battleRoyalServer\obj\Debug\battleRoyalServer.csproj.CoreCompileInputs.cache
+D:\PhotonBase\deploy\battleRoyalServer\bin\log4net.config
+D:\PhotonBase\deploy\battleRoyalServer\bin\battleRoyalServer.dll
+D:\PhotonBase\deploy\battleRoyalServer\bin\battleRoyalServer.pdb
+D:\vsProject\battleRoyalServer\obj\Debug\battleRoyalServer.csproj.CopyComplete
+D:\vsProject\battleRoyalServer\obj\Debug\battleRoyalServer.dll
+D:\vsProject\battleRoyalServer\obj\Debug\battleRoyalServer.pdb
+D:\battleRoyal\battleRoyalServer\obj\Debug\battleRoyalServer.csprojAssemblyReference.cache
+D:\battleRoyal\battleRoyalServer\obj\Debug\battleRoyalServer.csproj.CoreCompileInputs.cache
+D:\battleRoyal\battleRoyalServer\obj\Debug\battleRoyalServer.csproj.CopyComplete
+D:\battleRoyal\battleRoyalServer\obj\Debug\battleRoyalServer.dll
+D:\battleRoyal\battleRoyalServer\obj\Debug\battleRoyalServer.pdb
+D:\battleRoyal\PhotonBase\deploy\battleRoyalServer\bin\log4net.config
+D:\battleRoyal\PhotonBase\deploy\battleRoyalServer\bin\battleRoyalServer.dll
+D:\battleRoyal\PhotonBase\deploy\battleRoyalServer\bin\battleRoyalServer.pdb

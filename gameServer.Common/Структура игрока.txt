@@ -1,0 +1,21 @@
+{"Template":
+	{"Корпус":
+		{"Mesh": "value", "skin":"value"}
+	
+	 "Двигательный элемент": 
+		{"Mesh": "value", "skin":"value"}
+	
+	 "weapons":
+		{"top":
+			{"Mesh":"value", "skin":"value"}
+		 "front":
+			{"Mesh":"value", "skin":"value"}
+		 "back":
+			{"Mesh":"value", "skin":"value"}
+		 "right":
+			{"Mesh":"value", "skin":"value"}
+		 "left":
+			{"Mesh":"value", "skin":"value"}
+		}
+	}
+}
