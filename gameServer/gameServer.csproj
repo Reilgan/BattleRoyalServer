@@ -126,10 +126,12 @@
     <Compile Include="Chat.cs" />
     <Compile Include="ClientsPool.cs" />
     <Compile Include="Operations\BaseOperations.cs" />
-    <Compile Include="Operations\Login.cs" />
     <Compile Include="Operations\ChatMessage.cs" />
+    <Compile Include="Operations\EnterInGameServer.cs" />
+    <Compile Include="Operations\FindRoom.cs" />
     <Compile Include="Operations\Move.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

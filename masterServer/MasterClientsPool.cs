@@ -11,12 +11,12 @@ namespace masterServer
     public class MasterClientsPool
     {
         public static readonly MasterClientsPool Instance = new MasterClientsPool();
-        public List<MasterClient> Clients { get; private set; }
+        public Dictionary<int, MasterClient> Clients { get; private set; }
         private readonly ReaderWriterLockSlim readWriteLock;
         public static ExchangePsql DataBase { get; private set; }
 
         public MasterClientsPool() {
-            Clients = new List<MasterClient>();
+            Clients = new Dictionary<int, MasterClient>();
             readWriteLock = new ReaderWriterLockSlim();
             DataBase = new ExchangePsql("localhost",
                                         "5432",
@@ -29,7 +29,7 @@ namespace masterServer
         {
             using (ReadLock.TryEnter(this.readWriteLock, 1000))
             {
-                return Clients.Exists(n => n.Player.Equals(player));
+                return Clients.ContainsKey(player.Id);
             }
 
         }
@@ -37,21 +37,21 @@ namespace masterServer
         {
             using (WriteLock.TryEnter(this.readWriteLock, 1000))
             {
-                Clients.Add(client);
+                Clients.Add(client.Player.Id, client);
             }
         }
         public MasterClient getByName(string name)
         {
             using (ReadLock.TryEnter(this.readWriteLock, 1000))
             {
-                return Clients.Find(n => n.Player.Name.Equals(name));
+                return Clients.Values.ToList().Find(n => n.Player.Name.Equals(name));
             }
         }
         public void RemoveClient(MasterClient client)
         {
             using (ReadLock.TryEnter(this.readWriteLock, 1000))
             {
-                Clients.Remove(client);
+                Clients.Remove(client.Player.Id);
             }
 
         }

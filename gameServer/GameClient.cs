@@ -13,7 +13,9 @@ namespace gameServer
     {
         private readonly ILogger log = LogManager.GetCurrentClassLogger();
 
-        public string CharactedName { get; private set; }
+        public StructPlayer Player { get; private set; }
+
+        public object Conteiner { get; set; }
 
         public GameClient(InitRequest initRequest) : base(initRequest)
         {
@@ -22,22 +24,47 @@ namespace gameServer
 
         protected override void OnDisconnect(DisconnectReason reasonCode, string reasonDetail)
         {
-            ClientsPool.Instance.RemoveClient(this);
-            log.Debug("Disconnected: " + CharactedName);
+            if (Conteiner is Room)
+            {
+                Room room = (Room)Conteiner;
+                room.Exit(Player.Id);
+                return;
+            }
+
+            if (Conteiner is ClientsPool)
+            {
+                ClientsPool clientsPool = (ClientsPool)Conteiner;
+                clientsPool.Exit(Player.Id);
+                return;
+            }
+            log.Debug("Disconnected: " + Player.Name);
         }
 
         protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
         {
             switch (operationRequest.OperationCode)
             {
-                case (byte)OperationCode.Login:
+                case (byte)OperationCode.EnterInGameServer:
                     {
-                        LoginHandler(operationRequest, sendParameters);
+                        EnterInGameServerHandler(operationRequest, sendParameters);
                         break;
                     }
+
+                case (byte)OperationCode.ExitFromGameServer:
+                    {
+                        ExitFromGameServerHandler(operationRequest, sendParameters);
+                        break;
+                    }
+
+                case (byte)OperationCode.FindRoom:
+                    {
+                        FindRoomHandler(operationRequest, sendParameters);
+                        break;
+                    }
+
                 case (byte)OperationCode.SendChatMessage:
                     {
-                        SendChatMessageHandler(operationRequest, sendParameters);
+                        //SendChatMessageHandler(operationRequest, sendParameters);
                         break;
                     }
                 case (byte)OperationCode.GetRecentChatMessages:
@@ -45,19 +72,14 @@ namespace gameServer
                         GetRecentChatMessageHandler(operationRequest, sendParameters);
                         break;
                     }
-                case (byte)OperationCode.GetLocalPlayerTemplate:
-                    {
-                        GetLocalPlayerTemplateHandler(operationRequest, sendParameters);
-                        break;
-                    }
                 case (byte)OperationCode.Move:
                     {
                         MoveHandler(operationRequest, sendParameters);
                         break;
                     }
-                case (byte)OperationCode.GetPlayersTemplate:
+                case (byte)OperationCode.GetPlayersInRoom:
                     {
-                        GetPlayersTemplateHandler(operationRequest, sendParameters);
+                        GetPlayersInRoomHandler(operationRequest, sendParameters);
                         break;
                     }
                 default:
@@ -67,51 +89,37 @@ namespace gameServer
         }
 
         #region handler for requests
-        private void GetPlayersTemplateHandler(OperationRequest operationRequest, SendParameters sendParameters)
+        private void GetPlayersInRoomHandler(OperationRequest operationRequest, SendParameters sendParameters)
         {
-            List<GameClient> clientsForEven = new List<GameClient>();
-            clientsForEven.AddRange(ClientsPool.Instance.Clients);
-            clientsForEven.Remove(this);
-            foreach (GameClient client in clientsForEven)
+            if (Conteiner is Room)
             {
-                OperationResponse resp = new OperationResponse(operationRequest.OperationCode);
-                Dictionary<byte, object> template = new Dictionary<byte, object>();
-                template.Add((byte)ParameterCode.CharactedName, CharactedName);
-                template.Add((byte)ParameterCode.positionX, null);
-                template.Add((byte)ParameterCode.positionY, null);
-                template.Add((byte)ParameterCode.positionZ, null);
-                template.Add((byte)ParameterCode.rotationX, null);
-                template.Add((byte)ParameterCode.rotationY, null);
-                template.Add((byte)ParameterCode.rotationZ, null);
-                template.Add((byte)ParameterCode.rotationW, null);
-                resp.Parameters = template;
-                SendOperationResponse(resp, sendParameters);
+                Room room = (Room)Conteiner;
+                Dictionary<byte, object> param = new Dictionary<byte, object>();
+                foreach (GameClient client in room.Clients.Values)
+                {
+                    OperationResponse resp = new OperationResponse(operationRequest.OperationCode);
+                    resp.Parameters = client.Player.SerializationPlayerToDict();
+                    resp.Parameters.Add((byte)ParameterCode.positionX, (float)0.0);
+                    resp.Parameters.Add((byte)ParameterCode.positionY, (float)0.0);
+                    resp.Parameters.Add((byte)ParameterCode.positionZ, (float)0.0);
+                    resp.Parameters.Add((byte)ParameterCode.rotationX, (float)0.0);
+                    resp.Parameters.Add((byte)ParameterCode.rotationY, (float)0.0);
+                    resp.Parameters.Add((byte)ParameterCode.rotationZ, (float)0.0);
+                    resp.Parameters.Add((byte)ParameterCode.rotationW, (float)0.0);
+                    SendOperationResponse(resp, sendParameters);
+                }
             }
+
         }
         private void MoveHandler(OperationRequest operationRequest, SendParameters sendParameters)
         {
             var moveRequest = new Move(Protocol, operationRequest);
             var eventDataMove = new EventData((byte)EventCode.Move);
             eventDataMove.Parameters = moveRequest.GetParametersForEvent();
-            List<GameClient> clientsForEven = new List<GameClient>();
-            clientsForEven.AddRange(ClientsPool.Instance.Clients);
-            clientsForEven.Remove(this);
-            eventDataMove.SendTo(clientsForEven, sendParameters);
-        }
-        private void GetLocalPlayerTemplateHandler(OperationRequest operationRequest, SendParameters sendParameters)
-        {
-            var eventDataPlayerTemp = new EventData((byte)EventCode.PlayerTemplate);
-            Dictionary<byte, object> template = new Dictionary<byte, object>();
-            template.Add((byte)ParameterCode.CharactedName, CharactedName);
-            template.Add((byte)ParameterCode.positionX, null);
-            template.Add((byte)ParameterCode.positionY, null);
-            template.Add((byte)ParameterCode.positionZ, null);
-            template.Add((byte)ParameterCode.rotationX, null);
-            template.Add((byte)ParameterCode.rotationY, null);
-            template.Add((byte)ParameterCode.rotationZ, null);
-            template.Add((byte)ParameterCode.rotationW, null);
-            eventDataPlayerTemp.Parameters = template;
-            eventDataPlayerTemp.SendTo(ClientsPool.Instance.Clients, sendParameters);
+            Room room = (Room)Conteiner; 
+            Dictionary<int, GameClient> clientsForEven = new Dictionary<int, GameClient>(room.Clients);
+            clientsForEven.Remove(this.Player.Id);
+            eventDataMove.SendTo(clientsForEven.Values, sendParameters);
         }
         private void GetRecentChatMessageHandler(OperationRequest operationRequest, SendParameters sendParameters)
         {
@@ -122,29 +130,42 @@ namespace gameServer
             allMessagesEventData.Parameters = new Dictionary<byte, object>() { { (byte)ParameterCode.ChatMessage, allMessages } };
             allMessagesEventData.SendTo(new GameClient[] { this }, sendParameters);
         }
-        private void LoginHandler(OperationRequest operationRequest, SendParameters sendParameters)
+        private void EnterInGameServerHandler(OperationRequest operationRequest, SendParameters sendParameters)
         {
-            var loginRequest = new Login(Protocol, operationRequest);
-
-            if (!loginRequest.IsValid)
+            var EnterRequest = new EnterInGameServer(Protocol, operationRequest);
+/*            if (!EnterRequest.IsValid)
             {
-                SendOperationResponse(loginRequest.GetResponse(ErrorCode.InvalidParametrs), sendParameters);
+                SendOperationResponse(EnterRequest.GetResponse(ErrorCode.InvalidParametrs), sendParameters);
+                return;
+            }*/
+            StructPlayer player = new StructPlayer();
+            player.DeserializationPlayerFromDict(operationRequest.Parameters);
+            if (ClientsPool.Instance.IsContain(player.Id))
+            {
+                SendOperationResponse(EnterRequest.GetResponse(ErrorCode.NameIsExist), sendParameters);
                 return;
             }
-            CharactedName = loginRequest.CharactedName;
-            if (ClientsPool.Instance.IsContain(CharactedName))
-            {
-                SendOperationResponse(loginRequest.GetResponse(ErrorCode.NameIsExist), sendParameters);
-                return;
-            }
-
-            ClientsPool.Instance.AddClient(this);
+            Player = player;
+            ClientsPool.Instance.Enter(this);
             OperationResponse resp = new OperationResponse(operationRequest.OperationCode);
-            resp.Parameters = new Dictionary<byte, object>() { { (byte)ParameterCode.CharactedName, CharactedName } };
             SendOperationResponse(resp, sendParameters);
-            log.Info("user with name:" + CharactedName);
         }
-        private void SendChatMessageHandler(OperationRequest operationRequest, SendParameters sendParameters)
+        private void ExitFromGameServerHandler(OperationRequest operationRequest, SendParameters sendParameters)
+        {
+            var eventData = new EventData((byte)EventCode.PlayerExitFromGameServer);
+            eventData.Parameters = new Dictionary<byte, object>() { { (byte)ParameterCode.Id, Player.Id } };
+            Room room = (Room)Conteiner;
+            log.Debug("ExitPlayer: " + Player.Id);
+            log.Debug("Clients: " + room.Clients.Values);
+            eventData.SendTo(room.Clients.Values, sendParameters);
+        }
+        private void FindRoomHandler(OperationRequest operationRequest, SendParameters sendParameters) 
+        {
+            FindRoom findRoomRequest = new FindRoom(Protocol, operationRequest);
+            ClientsPool.Instance.FindRoom(findRoomRequest.IdPlayer, findRoomRequest.RoomType, sendParameters);
+        }
+
+/*        private void SendChatMessageHandler(OperationRequest operationRequest, SendParameters sendParameters)
         {
             var chatRequest = new ChatMessage(Protocol, operationRequest);
 
@@ -188,12 +209,7 @@ namespace gameServer
             eventData.Parameters = new Dictionary<byte, object>() { { (byte)ParameterCode.ChatMessage, message } };
             //SendEvent(eventData, sendParameters);
             eventData.SendTo(ClientsPool.Instance.Clients, sendParameters);
-        }
+        }*/
         #endregion
     }
 }
-
-//TODO Добавить определение шаблона локального игрока
-//Dictionary<string, object> playerTemplate = new Dictionary<string, object>();
-//playerTemplate.Add(loginRequest.CharactedName, null);
-//resp.Parameters = new Dictionary<byte, object>() { { (byte)ParameterCode.Player, playerTemplate } };

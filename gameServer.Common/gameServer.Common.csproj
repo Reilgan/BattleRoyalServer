@@ -45,13 +45,14 @@
     <Compile Include="CustomEventArgs\MoveEventArgs.cs" />
     <Compile Include="CustomEventArgs\PlayerTemplateEventArgs.cs" />
     <Compile Include="ErrorCode.cs" />
-    <Compile Include="CustomEventArgs\LoginEventArgs.cs" />
+    <Compile Include="CustomEventArgs\EnterLocalPlayerToMasterEventArgs.cs" />
     <Compile Include="EventCode.cs" />
     <Compile Include="OperationCode.cs" />
     <Compile Include="ParameterCode.cs" />
     <Compile Include="PlayerTemlateValueCode.cs" />
     <Compile Include="PlayerTemplateCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomTypeCode.cs" />
     <Compile Include="StructPlayer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

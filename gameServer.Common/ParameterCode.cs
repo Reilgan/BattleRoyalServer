@@ -18,6 +18,9 @@ namespace gameServer.Common
         rotationY,
         rotationZ,
         rotationW,
-        PlayerInfo
+        PlayerInfo,
+        RoomType,
+        IdRoom,
+        GameServerId,
     }
 }

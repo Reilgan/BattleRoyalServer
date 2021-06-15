@@ -9,7 +9,10 @@ namespace gameServer.Common
     public class PlayerTemlateEventArgs : EventArgs
     {
         //public Dictionary<string, object> PlayerTemplate { get; set; }
+        public int Id { get; private set; }
         public string CharactedName { get; private set; }
+
+        public Dictionary<byte, object> PlayerInfo = new Dictionary<byte, object>();
         public float PositionX { get; private set; }
         public float PositionY { get; private set; }
         public float PositionZ { get; private set; }
@@ -20,11 +23,12 @@ namespace gameServer.Common
 
         public PlayerTemlateEventArgs(Dictionary<byte, object> dict)
         {
+            Id = (int)dict[(byte)ParameterCode.Id];
             CharactedName = (string)dict[(byte)ParameterCode.CharactedName];
+            PlayerInfo = (Dictionary<byte, object>)dict[(byte)ParameterCode.PlayerInfo];
             PositionX = (float)dict[(byte)ParameterCode.positionX];
             PositionY = (float)dict[(byte)ParameterCode.positionY];
             PositionZ = (float)dict[(byte)ParameterCode.positionZ];
-            PositionX = (float)dict[(byte)ParameterCode.positionX];
             RotationX = (float)dict[(byte)ParameterCode.rotationX];
             RotationY = (float)dict[(byte)ParameterCode.rotationY];
             RotationZ = (float)dict[(byte)ParameterCode.rotationZ];

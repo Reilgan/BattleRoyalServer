@@ -9,10 +9,13 @@ namespace gameServer.Common
     public enum OperationCode : byte
     {
         Login,
+        EnterInGameServer,
+        ExitFromGameServer,
         SendChatMessage,
         GetRecentChatMessages,
-        GetLocalPlayerTemplate,
         Move,
-        GetPlayersTemplate
+        GetPlayersInRoom,
+        FindRoom,
+        GetGameServerIP,
     }
 }

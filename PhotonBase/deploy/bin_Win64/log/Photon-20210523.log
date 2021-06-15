@@ -1,0 +1,24 @@
+8480: 21:19:00.372 - ---
+8480: 21:19:00.372 - Service: "Photon Socket Server" starting
+8480: 21:19:00.372 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+8480: 21:19:00.373 - Will produce at most: 10 crash dumps
+8480: 21:19:00.373 - Service shutting down
+8480: 21:19:00.374 - Service shut down complete
+12388: 21:24:59.622 - ---
+12388: 21:24:59.622 - Service: "Photon Socket Server" starting
+12388: 21:24:59.622 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+12388: 21:24:59.623 - Will produce at most: 10 crash dumps
+12388: 21:24:59.623 - Service shutting down
+12388: 21:24:59.625 - Service shut down complete
+11968: 21:56:57.793 - ---
+11968: 21:56:57.793 - Service: "Photon Socket Server" starting
+11968: 21:56:57.793 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+11968: 21:56:57.794 - Will produce at most: 10 crash dumps
+11968: 21:56:57.794 - Service shutting down
+11968: 21:56:57.796 - Service shut down complete
+8168: 22:05:17.372 - ---
+8168: 22:05:17.372 - Service: "Photon Socket Server" starting
+8168: 22:05:17.372 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+8168: 22:05:17.389 - Will produce at most: 10 crash dumps
+8168: 22:05:17.389 - Service shutting down
+8168: 22:05:17.390 - Service shut down complete

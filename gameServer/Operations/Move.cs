@@ -16,8 +16,8 @@ namespace gameServer.Operations
         {
         }
 
-        [DataMember(Code = (byte)ParameterCode.CharactedName)]
-        public string CharactedName { get; set; }
+        [DataMember(Code = (byte)ParameterCode.Id)]
+        public int Id { get; set; }
 
         [DataMember(Code = (byte)ParameterCode.positionX)]
         public float PositionX { get; set; }
@@ -43,7 +43,7 @@ namespace gameServer.Operations
         public Dictionary<byte, object> GetParametersForEvent()
         {
             parameters = new Dictionary<byte, object>();
-            parameters.Add((byte)ParameterCode.CharactedName, CharactedName);
+            parameters.Add((byte)ParameterCode.Id, Id);
             parameters.Add((byte)ParameterCode.positionX, PositionX);
             parameters.Add((byte)ParameterCode.positionY, PositionY);
             parameters.Add((byte)ParameterCode.positionZ, PositionZ);

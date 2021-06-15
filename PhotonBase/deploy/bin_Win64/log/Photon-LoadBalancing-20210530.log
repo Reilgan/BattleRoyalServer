@@ -1,0 +1,152 @@
+8488: 18:23:43.450 - ---
+8488: 18:23:43.450 - Service: "Photon Socket Server" starting
+8488: 18:23:43.451 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+8488: 18:23:43.454 - Will produce at most: 10 crash dumps
+8488: 18:23:43.454 - Action: run as exe
+8488: 18:23:43.456 - Server Starting...
+8488: 18:23:43.456 -    Tick count: 12995834 (wraps in: 49.5599 days)
+8488: 18:23:43.456 - Tick count 64: 12995834
+8488: 18:23:43.456 - Photon Version: 4.0.28.2962
+8488: 18:23:43.456 - PID: 1928
+8488: 18:23:43.456 - Config File: D:\BattleRoyalServer\PhotonBase\deploy\bin_Win64\PhotonServer.config
+8488: 18:23:43.457 - Will NOT log unimportant exceptions
+8488: 18:23:43.467 - Not using performance counters as they are not currently installed. Run the service with /InstallCounters to install them.
+8488: 18:23:43.467 - Shutdown timeout enabled: 30000ms
+8488: 18:23:43.468 - Starting I/O thread pool with 2 threads
+8488: 18:23:43.469 - Using Standard allocator
+8488: 18:23:43.469 - Max message size: 512000
+8488: 18:23:43.469 - Starting business logic thread pool with the following settings
+8488: 18:23:43.469 - InitialThreads: 4 threads
+8488: 18:23:43.469 - MinThreads: 4 threads
+8488: 18:23:43.469 - Thread pool is fixed size
+8488: 18:23:43.470 - Starting ENet thread pool with the following settings
+8488: 18:23:43.470 - InitialThreads: 2 threads
+8488: 18:23:43.470 - MinThreads: 2 threads
+8488: 18:23:43.470 - Thread pool is fixed size
+8488: 18:23:43.470 - OnlyDispatchTimers: False
+8488: 18:23:43.474 - S2S: flow control: Max pending writes: 50
+8488: 18:23:43.474 - S2S: flow control: Max queued buffers: 200
+8488: 18:23:43.474 - S2S: flow control: Max pending writes MUX: 500
+8488: 18:23:43.474 - S2S: flow control: Max queued buffers MUX: 2000
+8488: 18:23:43.474 - S2S: MaxInboundMessageSize: 512000
+8488: 18:23:43.474 - S2S: MaxOutboundMessageSize: 512000
+8488: 18:23:43.474 - S2S: No inactivity timeout
+8488: 18:23:43.490 - WebSocket S2S: MaxInboundMessageSize: 512000
+8488: 18:23:43.490 - WebSocket S2S: MaxOutboundMessageSize: 512000
+8488: 18:23:43.490 - WebSocket S2S: No inactivity timeout
+8488: 18:23:43.491 - Max Reliable Data In Transit (awaiting ACKs) per peer : 51200 bytes
+8488: 18:23:43.491 - Per peer bandwidth limit
+8488: 18:23:43.491 - Transmit Rate Limit: 256 KB/Sec
+8488: 18:23:43.491 - Limit period: 200ms
+8488: 18:23:43.491 - Limit per period: 52428 bytes
+8488: 18:23:43.491 - Max queued data for transmission per peer: 512000 bytes
+8488: 18:23:43.491 - Minimum retransmit timeout: 200
+8488: 18:23:43.491 - No Maximum retransmit timeout
+8488: 18:23:43.491 - Minimum ENet timeout: 5000ms
+8488: 18:23:43.491 - Maximum ENet timeout: 30000ms
+8488: 18:23:43.491 - Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+8488: 18:23:43.491 - No RTT ACK adjustment timeout
+8488: 18:23:43.491 - Outbound ENet: MaxInboundMessageSize: 512000
+8488: 18:23:43.491 - Outbound ENet: MaxOutboundMessageSize: 512000
+8488: 18:23:43.521 - GetRuntime - About to load CLR - versions available:
+8488: 18:23:43.521 - v2.0.50727
+8488: 18:23:43.521 - v4.0.30319
+8488: 18:23:43.521 - Configuration requests: "v2.0.50727"
+8488: 18:23:43.521 - About to load version: "v2.0.50727"
+8488: 18:23:43.552 - About to load runtime: PhotonHostRuntime.PhotonDomainManager from PhotonHostRuntime, Culture=neutral, PublicKeyToken=02C301B61B060C4D
+8488: 18:23:43.552 - CLRBaseDirectory set to "D:\BattleRoyalServer\PhotonBase\deploy"
+8488: 18:23:43.552 - Optimising event broadcast for 20 or more peers
+8488: 18:23:43.554 - Start: About to load CLR - versions available:
+8488: 18:23:43.554 - v2.0.50727
+8488: 18:23:43.554 - v4.0.30319
+8488: 18:23:43.554 - No preference in configuration file, will load latest.
+8488: 18:23:43.554 - About to load version: "v4.0.30319"
+8488: 18:23:43.558 - Loaded version: "v4.0.30319"
+8488: 18:23:43.800 - Photon host runtime loaded
+8488: 18:23:45.991 - License is valid.
+8488: 18:23:45.991 - Licensed for 100 concurrent connections.
+8488: 18:23:45.991 - ENet: Max Reliable Data In Transit (awaiting ACKs) per peer : 51200 bytes
+8488: 18:23:45.991 - ENet: Per peer bandwidth limit
+8488: 18:23:45.991 - ENet: Transmit Rate Limit: 256 KB/Sec
+8488: 18:23:45.991 - ENet: Limit period: 200ms
+8488: 18:23:45.991 - ENet: Limit per period: 52428 bytes
+8488: 18:23:45.991 - ENet: Max queued data for transmission per peer: 512000 bytes
+8488: 18:23:45.991 - ENet: Minimum retransmit timeout: 200
+8488: 18:23:45.991 - No Maximum retransmit timeout
+8488: 18:23:45.991 - ENet: Minimum timeout: 5000ms
+8488: 18:23:45.991 - ENet: Maximum timeout: 30000ms
+8488: 18:23:45.991 - ENet: Max Inbound Reliable Data Queued (awaiting resends of earlier sequence numbers) per peer : 163840 bytes
+8488: 18:23:45.991 - No RTT ACK adjustment timeout
+8488: 18:23:45.991 - About to load application: MasterServer from masterServer
+8488: 18:23:45.991 - Auto restart is enabled for application, existing connections will be terminated during restart
+8488: 18:23:45.991 - Application will restart 1000ms after the last change detected
+8488: 18:23:45.991 - Application will restart if files matching the following are changed: "dll;config"
+8488: 18:23:45.991 - Application will NOT restart if files matching the following are changed: "log4net.config"
+8488: 18:23:46.463 - Taking reference on default app domain
+8488: 18:23:46.651 - Application: "MasterServer" started in app domain: 2
+8488: 18:23:46.651 - About to load application: GameServer from gameServer
+8488: 18:23:46.651 - Auto restart is enabled for application, existing connections will be terminated during restart
+8488: 18:23:46.651 - Application will restart 1000ms after the last change detected
+8488: 18:23:46.651 - Application will restart if files matching the following are changed: "dll;config"
+8488: 18:23:46.651 - Application will NOT restart if files matching the following are changed: "log4net.config"
+8488: 18:23:46.803 - Taking reference on default app domain
+8488: 18:23:46.929 - Application: "GameServer" started in app domain: 3
+8488: 18:23:46.929 - About to load application: CounterPublisher from CounterPublisher
+8488: 18:23:46.929 - Auto restart is enabled for application, existing connections will be terminated during restart
+8488: 18:23:46.930 - Application will restart 1000ms after the last change detected
+8488: 18:23:46.930 - Application will restart if files matching the following are changed: "dll;config"
+8488: 18:23:46.930 - Application will NOT restart if files matching the following are changed: "log4net.config"
+8488: 18:23:47.069 - Taking reference on default app domain
+8488: 18:23:47.145 - Application: "CounterPublisher" started in app domain: 4
+8488: 18:23:47.156 - Adding TCP listener on: 0.0.0.0: 4530 with a listen backlog of: 150
+8488: 18:23:47.156 - TCP inactivity timeout: 10000ms
+8488: 18:23:47.156 - TCP disconnect timeout: 120000ms
+8488: 18:23:47.156 - MaxInboundMessageSize: 512000
+8488: 18:23:47.156 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.156 - Forcing all applications ids to: "MasterServer"
+8488: 18:23:47.156 - Serving policy file requests from: "D:\BattleRoyalServer\PhotonBase\deploy\Policy\assets\socket-policy.xml"
+8488: 18:23:47.156 - Adding TCP listener on: 0.0.0.0: 4531 with a listen backlog of: 150
+8488: 18:23:47.157 - TCP inactivity timeout: 10000ms
+8488: 18:23:47.157 - TCP disconnect timeout: 120000ms
+8488: 18:23:47.157 - MaxInboundMessageSize: 512000
+8488: 18:23:47.157 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.157 - Forcing all applications ids to: "GameServer"
+8488: 18:23:47.157 - Serving policy file requests from: "D:\BattleRoyalServer\PhotonBase\deploy\Policy\assets\socket-policy.xml"
+8488: 18:23:47.157 - Adding TCP listener on: 0.0.0.0: 4520 with a listen backlog of: 150
+8488: 18:23:47.157 - TCP inactivity timeout: 5000ms
+8488: 18:23:47.157 - TCP disconnect timeout: 120000ms
+8488: 18:23:47.157 - MaxInboundMessageSize: 512000
+8488: 18:23:47.157 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.157 - Forcing all applications ids to: "MasterServer"
+8488: 18:23:47.157 - MaxInboundMessageSize: 512000
+8488: 18:23:47.157 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.157 - UDP address specified as: "0.0.0.0" adding listener to each available IPv4 address
+8488: 18:23:47.157 - Adding UDP listener on: 192.168.0.105: 5055 with a listen backlog of: 500
+8488: 18:23:47.157 - Adding UDP listener on: 127.0.0.1: 5055 with a listen backlog of: 500
+8488: 18:23:47.157 - Forcing all applications ids to: "GameServer"
+8488: 18:23:47.157 - MaxInboundMessageSize: 512000
+8488: 18:23:47.157 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.157 - UDP address specified as: "0.0.0.0" adding listener to each available IPv4 address
+8488: 18:23:47.158 - Adding UDP listener on: 192.168.0.105: 5056 with a listen backlog of: 500
+8488: 18:23:47.158 - Adding UDP listener on: 127.0.0.1: 5056 with a listen backlog of: 500
+8488: 18:23:47.158 - Adding WebSocket TCP listener on: 0.0.0.0: 9090 with a listen backlog of: 150
+8488: 18:23:47.158 - Nagle disabled
+8488: 18:23:47.158 - TCP inactivity timeout: 10000ms
+8488: 18:23:47.158 - MaxInboundMessageSize: 512000
+8488: 18:23:47.158 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.158 - Forcing all applications ids to: "MasterServer"
+8488: 18:23:47.158 - Will accept ANY sub-protocols from the client
+8488: 18:23:47.158 - No automatic WebSocket ping
+8488: 18:23:47.158 - Adding WebSocket TCP listener on: 0.0.0.0: 9091 with a listen backlog of: 150
+8488: 18:23:47.158 - Nagle disabled
+8488: 18:23:47.158 - TCP inactivity timeout: 10000ms
+8488: 18:23:47.158 - MaxInboundMessageSize: 512000
+8488: 18:23:47.158 - MaxOutboundMessageSize: 512000
+8488: 18:23:47.158 - Forcing all applications ids to: "GameServer"
+8488: 18:23:47.158 - Will accept ANY sub-protocols from the client
+8488: 18:23:47.158 - No automatic WebSocket ping
+8488: 18:23:47.159 - Adding Policy File listener on: 0.0.0.0: 843 with a listen backlog of: 150 and serving Policy File: "D:\BattleRoyalServer\PhotonBase\deploy\Policy\assets\socket-policy.xml"
+8488: 18:23:47.159 - TCP inactivity timeout: 1000ms
+8488: 18:23:47.159 - Adding Policy File listener on: 0.0.0.0: 943 with a listen backlog of: 150 and serving Policy File: "D:\BattleRoyalServer\PhotonBase\deploy\Policy\assets\socket-policy-silverlight.xml"
+8488: 18:23:47.159 - TCP inactivity timeout: 1000ms
+8488: 18:23:47.223 - Service is running...

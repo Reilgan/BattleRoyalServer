@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static gameServer.Common.StructPlayer;
 
 namespace masterServer
 {
@@ -48,7 +49,7 @@ namespace masterServer
             NpgsqlCommand commandCreateNewPlayer = new NpgsqlCommand("INSERT INTO users(name, template) VALUES (@name, @template)", Connection);
             npgSqlParameterName.Value = name;
 
-            Info playerInfo = StructPlayer.getNUllPlayerTemplate();
+            Info_ playerInfo = StructPlayer.getNUllPlayerTemplate();
             npgSqlParameterTemplate.Value = JsonConvert.SerializeObject(playerInfo);
             commandCreateNewPlayer.Parameters.AddRange(new NpgsqlParameter[] { npgSqlParameterName, npgSqlParameterTemplate });
             int count = commandCreateNewPlayer.ExecuteNonQuery();
@@ -98,11 +99,12 @@ namespace masterServer
                     templatesList.Add(dbDataRecord["template"]);
                 }
             }
+
             if (idlist.Count == 1 & namesList.Count == 1 & templatesList.Count == 1)
             {
                 playerStruct.Id = idlist.ElementAt(0);
                 playerStruct.Name = namesList.ElementAt(0);
-                playerStruct.Info = JsonConvert.DeserializeObject<Info>((string)templatesList.ElementAt(0));
+                playerStruct.Info = JsonConvert.DeserializeObject<Info_>((string)templatesList.ElementAt(0));
             }
             else
             {

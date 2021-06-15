@@ -2,18 +2,14 @@
 using gameServer.Common;
 using gameServer.Operations;
 using Photon.SocketServer;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace masterServer
 {
     public class MasterClient : ClientPeer
     {
         private readonly ILogger log = LogManager.GetCurrentClassLogger();
-       
+
         public StructPlayer Player { get; private set; }
 
         public MasterClient(InitRequest initRequest) : base(initRequest)
@@ -34,6 +30,11 @@ namespace masterServer
                 case (byte)OperationCode.Login:
                     {
                         LoginHandler(operationRequest, sendParameters);
+                        break;
+                    }
+                case (byte)OperationCode.GetGameServerIP:
+                    {
+                        GetGameServerIPHandler(operationRequest, sendParameters);
                         break;
                     }
             }
@@ -62,7 +63,7 @@ namespace masterServer
                 }
                 Player = newPlayer;
             }
-            else 
+            else
             {
                 StructPlayer player = MasterClientsPool.DataBase.getStructPlayerByName((string)loginRequest.CharactedName);
                 if (player.Id == -1)
@@ -83,6 +84,16 @@ namespace masterServer
             MasterClientsPool.Instance.AddClient(this);
             OperationResponse resp = new OperationResponse(operationRequest.OperationCode);
             resp.Parameters = Player.SerializationPlayerToDict();
+            SendOperationResponse(resp, sendParameters);
+        }
+
+        private void GetGameServerIPHandler(OperationRequest operationRequest, SendParameters sendParameters)
+        {
+            string CONNECTION = "localhost:5056";
+            OperationResponse resp = new OperationResponse(operationRequest.OperationCode);
+            Dictionary<byte, object> param = new Dictionary<byte, object>();
+            param.Add((byte)ParameterCode.GameServerId, CONNECTION);
+            resp.Parameters = param;
             SendOperationResponse(resp, sendParameters);
         }
         #endregion

@@ -11,7 +11,7 @@ namespace gameServer.Common
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Info Info { get; set; }
+        public Info_ Info { get; set; }
 
 
         public StructPlayer()
@@ -76,7 +76,7 @@ namespace gameServer.Common
             Name = (string)dict[(byte)ParameterCode.CharactedName];
 
             Template template = new Template();
-            Info info = new Info();
+            Info_ info = new Info_();
             Body body = new Body();
             MotorElement motorElement = new MotorElement();
             Weapons weapons = new Weapons();
@@ -128,12 +128,13 @@ namespace gameServer.Common
             template.MotorElement = motorElement;
             template.Weapons = weapons;
             info.Template = template;
+            Info = info;
         }
 
-        public static Info getNUllPlayerTemplate()
+        public static Info_ getNUllPlayerTemplate()
         {
             Template template = new Template();
-            Info info = new Info();
+            Info_ info = new Info_();
             Body body = new Body();
             MotorElement motorElement = new MotorElement();
             Weapons weapons = new Weapons();
@@ -178,12 +179,12 @@ namespace gameServer.Common
     }
 
     #region Serialize
-    public class Info 
+    public class Info_
     {
         public Template Template { get; set; }
     }
 
-   public class Template
+    public class Template
     {
         public Body Body { get; set; }
         public MotorElement MotorElement { get; set; }
@@ -191,7 +192,7 @@ namespace gameServer.Common
     }
 
     public class Body
-    { 
+    {
         public byte Mesh { get; set; }
         public byte Skin { get; set; }
     }
@@ -237,4 +238,5 @@ namespace gameServer.Common
         public byte Skin { get; set; }
     }
     #endregion
+
 }

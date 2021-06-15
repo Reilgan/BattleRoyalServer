@@ -9,7 +9,7 @@ namespace gameServer.Common
     public class MoveEventArgs: EventArgs
     {
 
-        public string CharactedName { get; private set; }
+        public int Id { get; private set; }
         public float PositionX { get; private set; }
         public float PositionY { get; private set; }
         public float PositionZ { get; private set; }
@@ -20,11 +20,10 @@ namespace gameServer.Common
 
         public MoveEventArgs(Dictionary<byte, object> dict)
         {
-            CharactedName = (string)dict[(byte)ParameterCode.CharactedName];
+            Id = (int)dict[(byte)ParameterCode.Id];
             PositionX = (float)dict[(byte)ParameterCode.positionX];
             PositionY = (float)dict[(byte)ParameterCode.positionY];
             PositionZ = (float)dict[(byte)ParameterCode.positionZ];
-            PositionX = (float)dict[(byte)ParameterCode.positionX];
             RotationX = (float)dict[(byte)ParameterCode.rotationX];
             RotationY = (float)dict[(byte)ParameterCode.rotationY];
             RotationZ = (float)dict[(byte)ParameterCode.rotationZ];

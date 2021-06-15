@@ -10,6 +10,8 @@ namespace gameServer.Common
     {
         ChatMessage,
         PlayerTemplate,
-        Move
+        Move,
+        RoomReady,
+        PlayerExitFromGameServer,
     }
 }
